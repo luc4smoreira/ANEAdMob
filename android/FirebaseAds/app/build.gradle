@@ -1,0 +1,20 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.kezong.fat-aar'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+    }
+}
+
+configurations.embed.transitive = true //this is necessary to export all dependencies using FAT-AAR plugin
+
+dependencies {
+    implementation files("$System.env.AIR_HOME/lib/android/FlashRuntimeExtensions.jar")
+    embed 'com.google.firebase:firebase-ads:19.3.0' //ATTENTION: Use embed (from FAT-AAR plugin) instead of implementation
+}

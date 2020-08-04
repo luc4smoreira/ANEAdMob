@@ -212,3 +212,4 @@ pip-log.txt
 android/AdMob/app/build/
 android/AdMob/.gradle/
 android/AdMob/.idea/
+android/FirebaseAds/app/build/
